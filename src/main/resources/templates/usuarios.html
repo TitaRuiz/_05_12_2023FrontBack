@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Listado de usuarios</title>
 </head>
 <body>
-$END$
+<h1>Listado de usuarios</h1>
+
+<a th:href="@{/usuario/nuevo}">Agregar nuevo usuario</a>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+        <th:block th:each ="usuario : ${usuarios}">
+            <tr>
+                <td>[[${usuario.id}]]</td>
+                <td>[[${usuario.nombre}]]</td>
+                <td>[[${usuario.email}]]</td>
+            </tr>
+        </th:block>
+    </tbody>
+
+</table>
 </body>
 </html>
